@@ -5,12 +5,12 @@ export default function PublicPageLayout(
     { children }: { children: React.ReactNode }) {
 
     return (
-        <div className="min-h-screen flex flex-col bg-background">
+    <div className="flex flex-col bg-background">
             <AnnouncementBar />
             <div className="sticky top-0 z-50">
                 <Navbar />
             </div>
-            <main className="">
+            <main>
                 {children}
             </main>
         </div>
