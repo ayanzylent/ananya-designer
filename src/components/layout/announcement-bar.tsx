@@ -3,9 +3,8 @@
 import { useState, useEffect } from "react";
 
 const ANNOUNCEMENTS = [
-  "Enjoy a flat 10% off our exclusive saree collection",
-  "Receive an additional 10% off on orders above ₹10,000",
-  "Complimentary express shipping on all orders over ₹3,000",
+  "Website under maintenance",
+  "We will back soon",
 ];
 
 export function AnnouncementBar() {
@@ -42,7 +41,7 @@ export function AnnouncementBar() {
   }, [text, isTyping, announcementIndex]);
 
   return (
-    <div className="w-full bg-red-600 text-center text-xs sm:text-sm font-medium text-primary-foreground flex justify-center items-center h-8">
+    <div className="w-full bg-announcement-bar text-center text-xs sm:text-sm font-medium text-primary-foreground flex justify-center items-center h-8">
       <p>
         {text}
         <span className="animate-pulse ml-0.5">|</span>
