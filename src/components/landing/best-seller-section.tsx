@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ShoppingBag } from "lucide-react";
 import { BEST_SELLERS } from "@/lib/data";
 import type { Product } from "@/types/product";
 
@@ -19,8 +18,10 @@ function formatPrice(amount: number): string {
 
 function ProductCard({ product }: { product: Product }) {
   return (
-    <article
-      className="group relative flex-none w-64 sm:w-72"
+    <Link
+      href={`/shop/${product.slug}`}
+      id={`product-card-${product.id}`}
+      className="group relative flex-none w-64 sm:w-72 block"
       aria-label={product.name}
     >
       {/* Image container */}
@@ -44,18 +45,6 @@ function ProductCard({ product }: { product: Product }) {
         <span className="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-semibold tracking-wide px-2 py-1 rounded-sm">
           -{product.discountPercent}%
         </span>
-
-        {/* Quick add overlay — appears on hover */}
-        <div className="absolute inset-x-0 bottom-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-          <Link
-            href={`/shop/${product.slug}`}
-            id={`quick-add-${product.id}`}
-            className="flex items-center justify-center gap-2 w-full bg-foreground text-background py-3 text-xs font-medium tracking-widest uppercase hover:bg-foreground/90 transition-colors duration-200"
-          >
-            <ShoppingBag className="w-3.5 h-3.5" aria-hidden="true" />
-            Quick Add
-          </Link>
-        </div>
       </div>
 
       {/* Details */}
@@ -66,13 +55,8 @@ function ProductCard({ product }: { product: Product }) {
         </p>
 
         {/* Name */}
-        <h3 className="text-sm font-medium text-foreground leading-snug">
-          <Link
-            href={`/shop/${product.slug}`}
-            className="hover:underline underline-offset-2 decoration-foreground/30"
-          >
-            {product.name}
-          </Link>
+        <h3 className="text-sm font-medium text-foreground leading-snug group-hover:underline underline-offset-2 decoration-foreground/30">
+          {product.name}
         </h3>
 
         {/* Pricing */}
@@ -88,7 +72,7 @@ function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 
