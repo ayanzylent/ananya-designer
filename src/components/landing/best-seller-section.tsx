@@ -1,89 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ShoppingBag } from "lucide-react";
+import { BEST_SELLERS } from "@/lib/data";
+import type { Product } from "@/types/product";
 
-// ─── Types ────────────────────────────────────────────────────────────────────
-
-interface Product {
-  id: string;
-  slug: string;
-  name: string;
-  fabric: string;
-  actualPrice: number;
-  discountedPrice: number;
-  discountPercent: number;
-  image: string;
-  badge?: string; // e.g. "New", "Trending", "Limited"
-}
-
-// ─── Static Data ──────────────────────────────────────────────────────────────
-
-const BEST_SELLERS: Product[] = [
-  {
-    id: "bs-001",
-    slug: "burgundy-banarasi-silk",
-    name: "Crimson Heritage Banarasi",
-    fabric: "Pure Silk · Banarasi",
-    actualPrice: 18500,
-    discountedPrice: 13999,
-    discountPercent: 24,
-    image: "/products/saree-burgundy-banarasi.png",
-    badge: "Bestseller",
-  },
-  {
-    id: "bs-002",
-    slug: "royal-blue-kanjivaram",
-    name: "Peacock Royal Kanjivaram",
-    fabric: "Pure Silk · Kanjivaram",
-    actualPrice: 22000,
-    discountedPrice: 16499,
-    discountPercent: 25,
-    image: "/products/saree-blue-kanjivaram.png",
-    badge: "Trending",
-  },
-  {
-    id: "bs-003",
-    slug: "blush-pink-chiffon",
-    name: "Blossom Chiffon Elegance",
-    fabric: "Pure Chiffon · Embroidered",
-    actualPrice: 9800,
-    discountedPrice: 7499,
-    discountPercent: 23,
-    image: "/products/saree-pink-chiffon.png",
-  },
-  {
-    id: "bs-004",
-    slug: "emerald-chanderi-silk",
-    name: "Emerald Chanderi Grace",
-    fabric: "Chanderi Silk · Handwoven",
-    actualPrice: 12500,
-    discountedPrice: 9299,
-    discountPercent: 26,
-    image: "/products/saree-green-chanderi.png",
-    badge: "New",
-  },
-  {
-    id: "bs-005",
-    slug: "black-georgette-embroidery",
-    name: "Midnight Zardozi Georgette",
-    fabric: "Georgette · Zardozi Work",
-    actualPrice: 24000,
-    discountedPrice: 17999,
-    discountPercent: 25,
-    image: "/products/saree-black-georgette.png",
-    badge: "Limited",
-  },
-  {
-    id: "bs-006",
-    slug: "tussar-kalamkari",
-    name: "Golden Kalamkari Tussar",
-    fabric: "Tussar Silk · Hand-painted",
-    actualPrice: 15000,
-    discountedPrice: 11499,
-    discountPercent: 23,
-    image: "/products/saree-tussar-kalamkari.png",
-  },
-];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

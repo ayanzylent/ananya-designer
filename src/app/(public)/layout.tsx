@@ -1,5 +1,6 @@
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 
 export default function PublicPageLayout(
     { children }: { children: React.ReactNode }) {
@@ -10,9 +11,10 @@ export default function PublicPageLayout(
             <div className="sticky top-0 z-50">
                 <Navbar />
             </div>
-            <main>
+            <main className="flex-1">
                 {children}
             </main>
+            <Footer />
         </div>
     );
 }

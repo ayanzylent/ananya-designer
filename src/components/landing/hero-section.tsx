@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 // ─── Hero Section ─────────────────────────────────────────────────────────────
 
@@ -30,28 +31,15 @@ export function HeroSection() {
         className="hidden object-cover object-center md:block"
       />
 
-      {/* ── Dark gradient overlay ────────────────────────────────────────── */}
-      <div
-        aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/25 to-black/55"
-      />
-
       {/* ── Hero content ─────────────────────────────────────────────────── */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
 
-        {/* Eyebrow line */}
-        <p className="mb-4 text-xs font-medium tracking-[0.35em] uppercase text-white/70 md:text-sm">
-          Est. 2020 &nbsp;·&nbsp; Handcrafted in India
-        </p>
-
         {/* Heading — Cormorant Garamond, uppercase editorial style */}
         <h1
-          className="font-heading font-light leading-[0.9] tracking-wider uppercase"
-          style={{ fontSize: "clamp(3rem, 10vw, 8rem)" }}
-        >
-          <span className="block">Elegance</span>
-          <span className="block italic">Woven</span>
-          <span className="block">Timelessly.</span>
+          className="font-heading font-light leading-[0.9] tracking-wider uppercase text-5xl sm:text-6xl md:text-7xl">
+          <span className="block text-[#3a3733]">Elegance</span>
+          <span className="block italic text-[#70574c]">Woven</span>
+          <span className="block text-[#3a3733]">Timelessly.</span>
         </h1>
 
         {/* Decorative rule */}
@@ -61,29 +49,12 @@ export function HeroSection() {
         />
 
         {/* Description */}
-        <p className="max-w-sm text-sm font-light leading-relaxed tracking-wide text-white/85 md:max-w-md md:text-base">
+        <p className="max-w-sm text-sm font-light leading-relaxed tracking-wide text-[#494844] md:max-w-md md:text-base [text-shadow:0_0_5px_#fff,0_0_15px_#fff,0_0_30px_rgba(255,255,255,0.8)]">
           Discover premium sarees and ethnic wear crafted with passion,
           designed for you.
         </p>
 
-        {/* CTA */}
-        <Link
-          href="/shop"
-          id="hero-explore-now"
-          className={[
-            "mt-10 inline-flex items-center gap-2",
-            "border border-white/70 px-8 py-3",
-            "text-xs font-medium tracking-[0.25em] uppercase text-white",
-            "transition-all duration-300",
-            "hover:bg-white hover:text-black hover:border-white",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent",
-          ].join(" ")}
-        >
-          Explore Now
-          <span aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1">
-            →
-          </span>
-        </Link>
+        <Button className="mt-10 px-8 py-5 bg-[#2e3135] rounded-full">EXPLORE COLLECTION</Button>
       </div>
     </section>
   );
