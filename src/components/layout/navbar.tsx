@@ -83,7 +83,7 @@ export function Navbar() {
             className="shrink-0"
           >
             <Image
-              src="/logo.png"
+              src="/logo-image.png"
               alt="Ananya Designer logo"
               width={120}
               height={40}
@@ -180,7 +180,7 @@ export function Navbar() {
                   className="mb-8 block"
                 >
                   <Image
-                    src="/logo.png"
+                    src="/logo-image.png"
                     alt="Ananya Designer logo"
                     width={100}
                     height={34}

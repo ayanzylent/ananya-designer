@@ -107,7 +107,7 @@ export function Footer() {
           <div className="lg:col-span-2 flex flex-col gap-6">
             <Link href="/" aria-label="Ananya Designer – go to homepage">
               <Image
-                src="/logo.png"
+                src="/logo-image.png"
                 alt="Ananya Designer logo"
                 width={120}
                 height={40}
