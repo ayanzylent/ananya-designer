@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react";
 
 const ANNOUNCEMENTS = [
-  "Website under maintenance",
-  "We will back soon",
+  "Delivery in 3-7 business days"
 ];
 
 export function AnnouncementBar() {
