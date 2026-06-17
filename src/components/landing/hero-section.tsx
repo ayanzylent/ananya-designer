@@ -54,7 +54,7 @@ export function HeroSection() {
           designed for you.
         </p>
 
-        <Button asChild className="mt-10 px-8 py-5 bg-[#2e3135] rounded-full"><Link href={'/collections'}>EXPLORE COLLECTION</Link></Button>
+        <Button asChild className="mt-10 px-8 py-5 bg-[#2e3135] rounded-full"><Link href={'/categories/all'}>EXPLORE COLLECTION</Link></Button>
       </div>
     </section>
   );

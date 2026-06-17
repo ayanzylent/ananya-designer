@@ -12,7 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { useScrolled } from "@/lib/hooks/use-scrolled";
+import { useScrolled } from "@/hooks/use-scrolled";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -25,10 +25,8 @@ interface NavLink {
 
 const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
-  { label: "Shop", href: "/shop" },
-  { label: "Collections", href: "/collections" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "Categories", href: "/categories/all" },
+  { label: "New Arrivals", href: "/categories/new-arrivals" },
 ];
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
