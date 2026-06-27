@@ -1,6 +1,11 @@
 import type { ApiResponse, PaginatedResponse } from "@/types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001";
+/**
+ * API base URL — uses same-origin when proxying is enabled (NEXT_PUBLIC_API_PROXY="true"),
+ * otherwise calls the backend directly. See next.config.ts for proxy setup.
+ */
+const useApiProxy = process.env.NEXT_PUBLIC_API_PROXY === "true";
+const API_BASE_URL = useApiProxy ? "" : (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:3001");
 
 type RequestMethod = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 
@@ -41,12 +46,9 @@ async function request<T>(
   const url = `${API_BASE_URL}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
 
   const requestHeaders: Record<string, string> = {
+    "Content-Type": "application/json",
     ...headers,
   };
-
-  if (body !== undefined) {
-    requestHeaders["Content-Type"] = "application/json";
-  }
 
   if (token) {
     requestHeaders["Authorization"] = `Bearer ${token}`;
@@ -108,6 +110,7 @@ async function paginatedRequest<T>(
   const { method = "GET", headers = {}, token, cache, next, withGuestId } = options;
 
   const requestHeaders: Record<string, string> = {
+    "Content-Type": "application/json",
     ...headers,
   };
 
@@ -156,7 +159,7 @@ export const api = {
   patch: <T>(endpoint: string, body?: unknown, options?: Omit<RequestOptions, "method" | "body">) =>
     request<T>(endpoint, { ...options, method: "PATCH", body }),
 
-  delete: <T>(endpoint: string, options?: Omit<RequestOptions, "method">) =>
+  delete: <T>(endpoint: string, options?: Omit<RequestOptions, "method" | "body">) =>
     request<T>(endpoint, { ...options, method: "DELETE" }),
 
   paginated: <T>(endpoint: string, options?: Omit<RequestOptions, "method" | "body">) =>
