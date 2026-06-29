@@ -46,7 +46,7 @@ async function request<T>(
   const url = `${API_BASE_URL}${endpoint.startsWith("/") ? endpoint : `/${endpoint}`}`;
 
   const requestHeaders: Record<string, string> = {
-    "Content-Type": "application/json",
+    ...(body ? { "Content-Type": "application/json" } : {}),
     ...headers,
   };
 
