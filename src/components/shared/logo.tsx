@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -15,16 +16,13 @@ const sizeClasses = {
 
 export function Logo({ size = "md", className, asLink = true }: LogoProps) {
   const content = (
-    <span
-      className={cn(
-        "font-heading font-bold tracking-tight select-none",
-        sizeClasses[size],
-        className
-      )}
-    >
-      <span className="gradient-text">Vastra</span>
-      <span className="text-accent-400">Hub</span>
-    </span>
+    <Image
+      src="/logo-image.png"
+      alt="Ananya Designer logo"
+      width={120}
+      height={40}
+      className="h-9 w-auto object-contain"
+    />
   );
 
   if (asLink) {

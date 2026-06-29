@@ -41,7 +41,7 @@ export default function SignupPage() {
         setLoading(false);
         return;
       }
-      toast.success("Account created! Welcome to VastraHub.");
+      toast.success("Account created!");
       router.push("/");
       router.refresh();
     } catch {
@@ -55,7 +55,7 @@ export default function SignupPage() {
       <CardHeader className="text-center">
         <CardTitle className="font-heading text-2xl">Create Account</CardTitle>
         <CardDescription>
-          Join VastraHub for premium Indian fashion
+          Join Ananya Designer for premium Indian fashion
         </CardDescription>
       </CardHeader>
       <CardContent>

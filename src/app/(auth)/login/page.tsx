@@ -61,7 +61,7 @@ function LoginForm() {
           Welcome Back
         </CardTitle>
         <CardDescription>
-          Sign in to your VastraHub account
+          Sign in to your account
         </CardDescription>
       </CardHeader>
       <CardContent>

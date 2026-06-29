@@ -415,7 +415,7 @@ function CheckoutContent() {
       <div className="grid lg:grid-cols-12 gap-8">
         {/* Left Column: Delivery & Payment Details */}
         <div className="lg:col-span-8 space-y-6">
-          
+
           {/* Section 1: Delivery Address */}
           <Card className="glass-card overflow-hidden">
             <CardHeader className="flex flex-row items-center justify-between border-b border-border/40 pb-4">
@@ -577,11 +577,10 @@ function CheckoutContent() {
                         <div
                           key={address._id}
                           onClick={() => setSelectedAddressId(address._id)}
-                          className={`relative p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 ${
-                            selectedAddressId === address._id
+                          className={`relative p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 ${selectedAddressId === address._id
                               ? "border-brand-500 bg-brand-500/5 shadow-[0_0_12px_rgba(99,102,241,0.15)]"
                               : "border-border/60 hover:border-border-hover bg-surface-secondary/40"
-                          }`}
+                            }`}
                         >
                           <div className="flex items-start justify-between mb-2">
                             <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold bg-brand-500/10 text-brand-400">
@@ -629,11 +628,10 @@ function CheckoutContent() {
                 {/* ICICI Bank gateway */}
                 <div
                   onClick={() => setPaymentMethod("icici")}
-                  className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 ${
-                    paymentMethod === "icici"
+                  className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 ${paymentMethod === "icici"
                       ? "border-brand-500 bg-brand-500/5 shadow-[0_0_12px_rgba(99,102,241,0.15)]"
                       : "border-border/60 hover:border-border-hover bg-surface-secondary/40"
-                  }`}
+                    }`}
                 >
                   <div className="flex items-center justify-between mb-3">
                     <span className="text-sm font-semibold">ICICI Bank Gateway</span>
@@ -650,7 +648,7 @@ function CheckoutContent() {
                 </div>
 
                 {/* Cash on Delivery */}
-                <div
+                {/* <div
                   onClick={() => setPaymentMethod("cod")}
                   className={`p-4 rounded-xl border-2 text-left cursor-pointer transition-all duration-200 ${
                     paymentMethod === "cod"
@@ -670,7 +668,7 @@ function CheckoutContent() {
                   <p className="text-[11px] text-[hsl(var(--muted-foreground))] leading-normal">
                     Pay with cash at the time of delivery. Additional verification may apply.
                   </p>
-                </div>
+                </div> */}
 
               </div>
 
@@ -691,14 +689,14 @@ function CheckoutContent() {
 
         {/* Right Column: Order Items & Summary */}
         <div className="lg:col-span-4 space-y-6">
-          
+
           {/* Order Summary & Cart items */}
           <Card className="glass-card sticky top-24">
             <CardHeader className="border-b border-border/40 pb-4">
               <CardTitle className="text-lg">Order Summary</CardTitle>
             </CardHeader>
             <CardContent className="pt-6 space-y-6">
-              
+
               {/* Checkout Items List */}
               <div className="space-y-4 max-h-[220px] overflow-y-auto pr-1">
                 {checkoutItems.map((item) => (

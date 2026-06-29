@@ -110,7 +110,7 @@ function SuccessContent() {
       iconWrap: "bg-emerald-500/10 border-emerald-500/30 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.2)]",
       title: "Order Placed Successfully!",
       subtitle:
-        "Thank you for shopping with VastraHub. Your order is confirmed and is currently being processed.",
+        "Thank you for shopping with Ananya Designer. Your order is confirmed and is currently being processed.",
     },
     processing: {
       icon: <Clock className="h-10 w-10" />,
